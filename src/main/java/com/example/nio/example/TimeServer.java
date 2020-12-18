@@ -14,10 +14,8 @@ public class TimeServer {
 
             }
 
-            MultiplexerTimeServer timeServer = new MultiplexerTimeServer(port);
-            new Thread(timeServer,"NIO-MultiplexerTimeServer_001").start();
-
         }
-
+        MultiplexerTimeServer timeServer = new MultiplexerTimeServer(port);
+        new Thread(timeServer,"NIO-MultiplexerTimeServer_001").start();
     }
 }

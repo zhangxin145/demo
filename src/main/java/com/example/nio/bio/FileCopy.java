@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
+
 /**
  * @author xin.z
  * @date 2020/12/18 4:40 下午
@@ -21,7 +22,8 @@ public class FileCopy {
         channel1.transferFrom(channel,0,channel.size());
         channel.close();
         channel1.close();
-        in.close();;
+        in.close();
         out.close();
+
     }
 }

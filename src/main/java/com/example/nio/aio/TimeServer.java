@@ -1,12 +1,7 @@
-package com.example.nio.example;
+package com.example.nio.aio;
 
-/**
- * @author xin.z
- * @date 2020/12/18 5:42 下午
- */
-public class TimeClient {
+public class TimeServer {
     public static void main(String[] args) {
-
         int port = 8080;
         if (args != null && args.length > 0) {
             try {
@@ -15,6 +10,5 @@ public class TimeClient {
 
             }
         }
-        new Thread(new TimeClientHandle("127.0.0.1", port)).start();
     }
 }
