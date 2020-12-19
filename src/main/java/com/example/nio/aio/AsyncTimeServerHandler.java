@@ -32,6 +32,6 @@ public class AsyncTimeServerHandler implements Runnable {
     }
 
     public void doAccept(){
-        asynchronousServerSocketChannel.accept(this,new Acceptcom);
+        //asynchronousServerSocketChannel.accept(this,new Acceptcom);
     }
 }
