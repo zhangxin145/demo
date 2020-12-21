@@ -18,16 +18,22 @@ import java.time.LocalDateTime;
  */
 public class TimeServerHandler extends ChannelInboundHandlerAdapter {
 
+    private int counter;
+
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         ByteBuf buf = (ByteBuf) msg;
         byte[] req = new byte[buf.readableBytes()];
         buf.readBytes(req);
-        String body = new String(req, "UTF-8");
+        //String body = new String(req, "UTF-8");
+
+        String body = new String(req, "UTF-8")
+                .substring(0,req.length-System.getProperty("line.separator").length());
         System.out.println(" server receive msg:" + body);
         String currentDate = body.equalsIgnoreCase("TIME") ? LocalDateTime.now().toString() : "qqqq";
+        currentDate = currentDate+System.getProperty("line.separator");
         ByteBuf resp = Unpooled.copiedBuffer(currentDate.getBytes());
-        ctx.write(resp);
+        ctx.writeAndFlush(resp);
 
     }
 
