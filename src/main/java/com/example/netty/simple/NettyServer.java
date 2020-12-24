@@ -2,6 +2,7 @@ package com.example.netty.simple;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
+import io.netty.channel.nio.NioEventLoop;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
@@ -16,6 +17,7 @@ public class NettyServer {
 
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workGroup = new NioEventLoopGroup();
+        NioEventLoop
 
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
