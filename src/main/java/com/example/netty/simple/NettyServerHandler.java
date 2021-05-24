@@ -21,6 +21,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
         Channel channel = ctx.channel();
         ChannelPipeline pipeline = ctx.pipeline();
 
+
         ByteBuf buf = (ByteBuf)msg;
         System.out.println("客户端发送的内容是："+buf.toString(CharsetUtil.UTF_8));
         System.out.println("客户端ip是："+channel.remoteAddress());
